@@ -1,29 +1,25 @@
-<h2>Sign up</h2>
+<h2 class="text-blue-500 font-bold text-xl">Create an account</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="mb-4">
+    <%= f.input :first_name, required: true, autofocus: true, input_html: { class: "mt-2 flex flex-col font-medium" } %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="mb-4">
+    <%= f.input :email, required: true, input_html: { class: "mt-2 flex flex-col font-medium" } %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="mb-4">
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { class: "mt-2 flex flex-col font-medium" } %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="mb-4">
+    <%= f.input :password_confirmation, required: true, input_html: { class: "mt-2 flex flex-col font-medium" } %>
+  </div>
+  <div class="mt-4">
+    <%= f.button :submit, "Sign up", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
   </div>
 <% end %>
+
+
 
 <%= render "devise/shared/links" %>
