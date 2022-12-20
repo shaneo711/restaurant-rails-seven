@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 List.create(
   {
-    name: "Gang Gang",
+    name: 'Gang Gang',
     description: 'Restaurants for the calendar app.',
     image_url: 'https://static.thehoneycombers.com/wp-content/uploads/sites/2/2022/03/sydney-restaurants-woodcut.png',
     user_id: 1
