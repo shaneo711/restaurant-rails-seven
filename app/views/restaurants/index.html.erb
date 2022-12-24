@@ -1,9 +1,9 @@
 <div>
-  <h1 class="text-2xl text-center font-bold text-indigo-500">Latest Restaurants</h1>
-  <% @restaurants.each do |restaurant| %>
+  <h1 class="text-2xl text-center font-bold text-indigo-500">Latest Restaurants Added</h1>
+  <% @restaurants.reverse.each do |restaurant| %>
     <div class="my-2">
       <div class="flex flex-col bg-white border shadow-md rounded-xl">
-        <img class="w-full h-auto rounded-t-xl" src=''/>
+        <img class="w-full h-auto rounded-t-xl" src="https://picsum.photos/200/100"/>
         <div class="p-4 md:p-5">
           <h3 class="text-xl font-bold text-blue-500">
             <%= restaurant.name %>
@@ -11,9 +11,14 @@
           <p class="mt-1 mb-3 text-gray-800">
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </p>
-          <a class="w-full shadow-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="#">
-            Details
-          </a>
+          <div class='flex justify-between items-center'>
+            <a class="w-30 shadow-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="#">
+              Details
+            </a>
+            <p>
+            Added: <%= restaurant.created_at.strftime("%d/%m/%Y") %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
