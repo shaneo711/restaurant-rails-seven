@@ -5,23 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-List.create(
-  {
-    name: 'Gang Gang',
-    description: 'Restaurants for the calendar app.',
-    image_url: 'https://static.thehoneycombers.com/wp-content/uploads/sites/2/2022/03/sydney-restaurants-woodcut.png',
-    user_id: 1
-  }
-)
+puts "Seeding..."
+puts "------------------------"
+puts "Creating restaurants..."
 5.times do
-  Restaurant.create(
+  restaurant = Restaurant.new(
     {
       name: Faker::Restaurant.name,
       address: Faker::Address.full_address,
       phone: Faker::PhoneNumber.cell_phone,
       image_url: 'http://sushibarkakizaki.com/wp-content/uploads/2017/06/kaki_top1-2.jpg',
-      user_id: 1,
-      list_id: 1
+      user_id: User.last.id
     }
   )
+  restaurant.save!
+  puts "Restaurant ##{restaurant.id} created!"
+  puts "Seeding done!"
 end
