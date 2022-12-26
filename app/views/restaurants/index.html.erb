@@ -1,26 +1,46 @@
 <div>
   <h1 class="text-2xl text-center font-bold text-indigo-500">Latest Restaurants Added</h1>
-  <% @restaurants.reverse.each do |restaurant| %>
-    <div class="my-2">
-      <div class="flex flex-col bg-white border shadow-md rounded-xl">
-        <img class="w-full h-auto rounded-t-xl" src="https://picsum.photos/200/100"/>
-        <div class="p-4 md:p-5">
-          <h3 class="text-xl font-bold text-blue-500">
-            <%= restaurant.name %>
-          </h3>
-          <p class="mt-1 mb-3 text-gray-800">
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-          </p>
-          <div class='flex justify-between items-center'>
-            <a class="w-30 shadow-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="#">
-              Details
-            </a>
-            <p>
-            Added: <%= restaurant.created_at.strftime("%d/%m/%Y") %>
-            </p>
-          </div>
+  <% @restaurants.each do |restaurant| %>
+    <div class="bg-white shadow-lg my-2 rounded">
+      <img class='h-52 w-full object-cover rounded' src=<%= restaurant.image_url %> />
+      <div class="p-4 flex justify-between items-end relative">
+        <div>
+          <h2 class='text-lg font-bold m-0'><%= restaurant.name %></h2>
+          <p class='text-md opacity-75 m-0'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, nemo.</p>
         </div>
+        <h2 class="text-lg font-bold m-0"><%= restaurant.cuisine_type %></h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="absolute right-4 -top-5 w-11 rounded-full shadow border-white border-2" />
       </div>
     </div>
   <% end %>
 </div>
+
+<% if false %>
+<div class="my-2">
+      <div class="bg-white border shadow-md rounded-xl bg-no-repeat bg-cover bg-center" style="background: url('<%= restaurant.image_url %>'); background-repeat: no-repeat; background-position: center; background-position: cover;">
+        <div class="p-3 md:p-5 flex flex-col justify-between h-60">
+          <div class="flex">
+            <h3 class="text-lg font-bold text-white bg-gray-500 p-2 rounded-full bg-opacity-80">
+              <%= restaurant.name %>
+            </h3>
+          </div>
+        </div>
+        <div class='p-3'>
+          <div class='flex justify-between items-center mb-2'>
+            <a class="w-30 shadow-md bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline" href="#">
+              Details
+            </a>
+          </div>
+          <div class='flex justify-between'>
+            <p class='w-36 text-center text-white bg-gray-500 p-1 rounded-full bg-opacity-75'>
+              <i class="fa-solid fa-circle-plus"></i> <%= restaurant.created_at.strftime("%d/%m/%Y") %>
+            </p>
+            <p class='w-36 text-center text-white text-lg'>
+                <i class="fa-solid fa-user"></i> <%= restaurant.user.first_name %>
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+<% end%>
