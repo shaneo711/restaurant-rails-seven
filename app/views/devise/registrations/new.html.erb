@@ -11,13 +11,16 @@
         <%= f.input :first_name, required: true, autofocus: true, input_html: { class: "relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" }, placeholder: 'First Name', label: false %>
       </div>
       <div>
-        <%= f.input :email, required: true, input_html: { class: "relative block w-full appearance-none rounded-none border-x-1 border-y-0 border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" }, placeholder: 'Email', label: false %>
+        <%= f.input :profile_image, required: false, input_html: { class: "relative block w-full appearance-none rounded-none border-x-1 border-b-1 border-t-0 border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" }, placeholder: 'Link to profile image', label: false %>
       </div>
       <div>
-        <%= f.input :password, required: true, input_html: { class: "relative block w-full appearance-none rounded-none border-x-1 border-y-1 border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" }, placeholder: 'Password (Min 6 chars)', label: false %>
+        <%= f.input :email, required: true, input_html: { class: "relative block w-full appearance-none rounded-none border-x-1 border-b-1 border-t-0 border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" }, placeholder: 'Email', label: false %>
       </div>
       <div>
-        <%= f.input :password_confirmation, required: true, input_html: { class: "relative block w-full appearance-none rounded-none rounded-b-md border-x-1 border-t-0 border-b-1 border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" }, placeholder: 'Confirm password', label: false %>
+        <%= f.input :password, required: true, input_html: { class: "relative block w-full appearance-none rounded-none border-x-1 border-b-1 border-t-0 border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" }, placeholder: 'Password (Min 6 chars)', label: false %>
+      </div>
+      <div>
+        <%= f.input :password_confirmation, required: true, input_html: { class: "relative block w-full appearance-none rounded-none rounded-b-md border-x-1 border-b-1 border-t-0 border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" }, placeholder: 'Confirm password', label: false %>
       </div>
       <div class="mt-4">
         <%= f.button :submit, "Sign up", class: " w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
