@@ -4,9 +4,8 @@
       <i class="fa-solid fa-bowl-food text-3xl mx-auto h-12 w-auto text-indigo-600"></i>
       <h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-gray-900">Log in</h2>
     </div>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= f.error_notification %>
-
       <div>
         <%= f.input :email, required: true, autofocus: true, input_html: { class: "relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" }, placeholder: 'Email', label: false %>
       </div>
