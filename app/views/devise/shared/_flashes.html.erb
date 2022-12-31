@@ -1,0 +1,25 @@
+<!-- app/views/shared/_flashes.html.erb -->
+<% if notice %>
+  <div class="bg-green-300 m-1 py-2 px-4 rounded-md flex justify-between" data-controller='flash-message' data-flash-message-target='message' role="alert">
+    <%= notice %>
+    <button
+      type="button"
+      data-action='click->flash-message#close'
+      aria-label="Close"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+<% if alert %>
+  <div class="bg-red-300 m-1 py-2 px-4 rounded-md flex justify-between" data-controller='flash-message' data-flash-message-target='message' role="alert">
+    <%= alert %>
+    <button
+      type="button"
+      data-action='click->flash-message#close'
+      aria-label="Close"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
