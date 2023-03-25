@@ -16,7 +16,9 @@
       <div class="text-sm lg:flex-grow">
         <%= link_to 'Add new Restaurant', new_restaurant_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'%>
         <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-          <i class="fa-solid fa-list"></i><span> - Create a List</span>
+          <%= link_to new_list_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4' do %>
+            <i class="fa-solid fa-list"></i><span> New Restaurant List</span>
+          <% end %>
         </a>
         <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
           <i class="fa-solid fa-question"></i><span> - How it works</span>
