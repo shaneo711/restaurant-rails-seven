@@ -9,7 +9,7 @@
           <p class='text-md opacity-75 m-0'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, nemo.</p>
         </div>
         <%= link_to "Details", restaurant_path(restaurant), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="absolute right-4 -top-5 w-11 rounded-full shadow border-white border-2" />
+        <img src=<%= restaurant.user.profile_image %> class="absolute right-4 -top-5 w-11 rounded-full shadow border-white border-2" />
       </div>
     </div>
   <% end %>
