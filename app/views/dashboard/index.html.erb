@@ -1,0 +1,35 @@
+<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+  <h1 class="text-3xl font-bold mb-4">My Dashboard</h1>
+
+  <div class="flex mb-8">
+    <div class="w-1/2 pr-4">
+      <h2 class="text-2xl font-bold mb-4">My Restaurants</h2>
+      <ul class="list-disc list-inside">
+        <% @user_restaurants.each do |restaurant| %>
+          <li>
+            <%= link_to restaurant.name, restaurant, class: 'hover:text-blue-500'%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="w-1/2 pl-4">
+      <h2 class="text-2xl font-bold mb-4">My Lists</h2>
+      <ul class="list-disc list-inside">
+        <% @user_lists.each do |list| %>
+          <li>
+            <%= link_to list.name, list, class: 'hover:text-blue-500'%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text-2xl font-bold mb-4">Saved Lists</h2>
+    <ul class="list-disc list-inside">
+      <% @saved_lists.each do |saved_list| %>
+        <li><%= saved_list.list.name %> - <%= saved_list.list.user.username %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

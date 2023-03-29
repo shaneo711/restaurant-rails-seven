@@ -14,15 +14,13 @@
   <% if user_signed_in? %>
     <div id="navbarMenu" class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto">
       <div class="text-sm lg:flex-grow">
-        <%= link_to 'Add new Restaurant', new_restaurant_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'%>
+        <%= link_to 'Add Restaurant', new_restaurant_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'%>
         <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
           <%= link_to new_list_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4' do %>
-            <i class="fa-solid fa-list"></i><span> New Restaurant List</span>
+            <i class="fa-solid fa-list"></i><span> Create new list</span>
           <% end %>
         </a>
-        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-          <i class="fa-solid fa-question"></i><span> - How it works</span>
-        </a>
+        <%= link_to 'My Dashboard', dashboard_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4'%>
       </div>
       <div>
         <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" %>
@@ -31,7 +29,7 @@
   <% else %>
     <div id="navbarMenu" class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto">
       <div class="text-sm lg:flex-grow">
-        <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+        <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
           Home
         </a>
         <%= link_to 'Sign Up', new_user_registration_path, class: 'block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4' %>
